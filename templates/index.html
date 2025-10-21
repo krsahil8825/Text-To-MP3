@@ -1,22 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "./layout.html" %} 
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Text to MP3 Converter</title>
-    </head>
+{% block title %}Text To MP3 | Home{% endblock %} 
 
-    <body>
-        <h1>Text to MP3 Converter</h1>
-        <form method="POST">
-            <textarea name="text" rows="5" cols="40" placeholder="Enter your text here..." required></textarea><br><br>
-            <label>Select Voice:</label>
-            <select name="voice">
-                <option value="female" selected>Female</option>
-                <option value="male">Male</option>
-            </select><br><br>
-            <button type="submit">Convert to MP3</button>
+{% block content %}
+<div class="w-100 d-flex flex-column align-items-center">
+    <div class="card shadow-lg p-4 rounded w-100 rounded shadow" style="background-color: #1b1f23ff; color: #f8f9fa">
+        <h3 class="card-title text-center mb-4">
+            Text To MP3 Converter
+        </h3>
+        <p class="text-center text-secondary mb-4">Convert your text into high-quality speech and download as MP3</p>
+
+        {% if message %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+
+        <form class="w-100" method="POST" action="/">
+            <div class="mb-3">
+                <label for="text" class="form-label">Enter Your Text:</label>
+                <textarea 
+                    name="text" 
+                    id="text" 
+                    class="form-control" 
+                    rows="6" 
+                    placeholder="Type or paste your text here..."
+                    required
+                    style="background-color: #2d3339; color: #f8f9fa; border: 1px solid #495057;"
+                ></textarea>
+            </div>
+            
+            <div class="mb-4">
+                <label for="voice" class="form-label">Select Voice:</label>
+                <select name="voice" id="voice" class="form-select" style="background-color: #2d3339; color: #f8f9fa; border: 1px solid #495057;">
+                    <option value="female">Female Voice</option>
+                    <option value="male">Male Voice</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg w-100">
+                <i class="bi bi-file-earmark-music"></i> Convert to MP3
+            </button>
         </form>
-    </body>
+    </div>
 
-</html>
+    <div class="card shadow-lg mt-4 p-4 rounded w-100 text-center text-light" style="background-color: #1b1f23ff;">
+        <h5 class="mb-3"><i class="bi bi-info-circle"></i> How It Works</h5>
+        <div class="text-start">
+            <ol class="text-secondary">
+                <li>Enter or paste the text you want to convert into speech</li>
+                <li>Choose your preferred voice (Male or Female)</li>
+                <li>Click "Convert to MP3" and your download will start automatically</li>
+                <li>Enjoy your audio file offline anytime!</li>
+                <li>Text limit is up to 5000 characters</li>
+                <li>(Recommended) This web app works best with simple English words</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 
+
+{% block scripts %}
+{% endblock %}

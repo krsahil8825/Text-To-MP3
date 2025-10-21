@@ -1,0 +1,49 @@
+{% extends "./layout.html" %} 
+
+{% block title %}Text To MP3 | About{% endblock %} 
+
+{% block content %}
+<div class="w-100 d-flex flex-column align-items-center">
+    <div class="card shadow-lg p-4 rounded w-100" style="background-color: #1b1f23ff; color: #f8f9fa">
+        <div class="text-center mb-4">
+            <h2 class="card-title">About Text To MP3</h2>
+        </div>
+
+        <div class="card shadow p-4 rounded mt-3" style="background-color: #2d3339; color: #f8f9fa">
+            <h4 class="mb-3">What is this Web App?</h4>
+            <p>
+                Text To MP3 is a lightweight Flask-based web application that converts user-submitted text
+                into high-quality speech (MP3 format). The app provides a simple web interface where users can
+                input text, choose between male or female voice options, and download the generated MP3 file instantly.
+            </p>
+
+            <h4 class="mt-4 mb-3">Features</h4>
+            <ul>
+                <li>Convert text input into downloadable MP3 speech files</li>
+                <li>Support for both male and female voice options</li>
+                <li>Offline voice generation using pyttsx3 (no API calls required)</li>
+                <li>In-memory file streaming (no disk storage needed)</li>
+                <li>Dark mode friendly interface</li>
+                <li>Responsive design for desktop and mobile devices</li>
+                <li>Fast and efficient processing</li>
+            </ul>
+
+            <h4 class="mt-4 mb-3">How it works</h4>
+            <p>
+                Enter or paste your text into the text area on the home page, select your preferred voice
+                (Male or Female), and click "Convert to MP3". The application uses the pyttsx3 library for
+                text-to-speech synthesis, generating the audio file on-the-fly. Your MP3 file will be
+                downloaded automatically, ready to use offline anytime!
+            </p>
+
+            <h4 class="mt-4 mb-3">Technology Stack</h4>
+            <ul>
+                <li><strong>Backend:</strong> Flask (Python Web Framework)</li>
+                <li><strong>TTS Engine:</strong> pyttsx3 (Text-to-Speech Library)</li>
+                <li><strong>Frontend:</strong> Bootstrap 5, HTML5, CSS3</li>
+                <li><strong>Icons:</strong> Bootstrap Icons</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
