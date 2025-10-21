@@ -134,6 +134,11 @@ def home():
         if not text:
             return "Error: No text provided", 400
 
+        if len(text) > 5000:
+            return render_template(
+                "index.html", message="Error: Text exceeds 5000 character limit."
+            )
+
         # Initialize pyttsx3 text-to-speech engine
         engine = pyttsx3.init()
         voices = engine.getProperty("voices")
