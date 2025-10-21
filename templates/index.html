@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to MP3</title>
-</head>
-<body>
-    Hello World!
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Text to MP3 Converter</title>
+    </head>
+
+    <body>
+        <h1>Text to MP3 Converter</h1>
+        <form method="POST">
+            <textarea name="text" rows="5" cols="40" placeholder="Enter your text here..." required></textarea><br><br>
+            <label>Select Voice:</label>
+            <select name="voice">
+                <option value="female" selected>Female</option>
+                <option value="male">Male</option>
+            </select><br><br>
+            <button type="submit">Convert to MP3</button>
+        </form>
+    </body>
+
 </html>
